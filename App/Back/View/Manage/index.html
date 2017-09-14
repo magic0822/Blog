@@ -1,0 +1,48 @@
+{include file='../Public/header.html'}
+
+<div class="admin">
+	<div class="line-big">
+    	<div class="xm3">
+        	<div class="panel border-back">
+            	<div class="panel-body text-center">
+                	<img src="{$smarty.const.IMAGES_DIR}/monkey.png" width="120" class="radius-circle" /><br />
+                    {$smarty.session.adminInfo.admin_name}
+                </div>
+                <div class="panel-foot bg-back border-back">Hello，{$smarty.session.adminInfo.admin_name}，This is your{$smarty.session.adminInfo.login_nums+1} times to login，Last login is {$smarty.session.adminInfo.login_ip}。</div>
+            </div>
+            <br />
+        	<div class="panel">
+            	<div class="panel-head"><strong>Stat.</strong></div>
+                <ul class="list-group">
+                	<li><span class="float-right badge bg-red">0</span><span class="icon-user"></span> Member</li>
+                    <li><span class="float-right badge bg-main">0</span><span class="icon-file"></span> Article</li>
+                    <li><span class="float-right badge bg-main">0</span><span class="icon-shopping-cart"></span> Order</li>
+                    <li><span class="float-right badge bg-main">0</span><span class="icon-database"></span> Database</li>
+                </ul>
+            </div>
+            <br />
+        </div>
+        <div class="xm9">
+            <div class="alert">
+                <div class="alert alert-yellow"><span class="close"></span><strong>Tips:</strong>Welcome!</div>
+                <h4>looking for bugs</h4>
+                <p class="text-gray padding-top">looking for so long</p>
+            	<a target="_blank" class="button bg-dot icon-code" href="#"> come</a>
+            	<a target="_blank" class="button bg-main icon-download" href="#">and</a>
+            	<a target="_blank" class="button border-main icon-file" href="#"> help</a>
+            </div>
+            <div class="panel">
+            	<div class="panel-head"><strong>System info.</strong></div>
+                <table class="table">
+                	<tr><th colspan="2">Server: </th><th colspan="2">System info: </th></tr>
+                    <tr><td width="110" align="right">OS: </td><td>{$smarty.const.PHP_OS}</td><td width="90" align="right">OS development: </td><td><a href="#" target="_blank">MVC frame</a></td></tr>
+                    <tr><td align="right">Web Server: </td><td>{$smarty.server.SERVER_SOFTWARE}</td><td align="right">Home page: </td><td><a href="www.blog.com" target="_blank">www.blog.com</a></td></tr>
+                    <tr><td align="right">Server IP: </td><td>{$smarty.server.SERVER_ADDR}</td><td align="right">Demo: </td><td><a href="#" target="_blank">{$smarty.server.SERVER_ADDR}</a></td></tr>
+                    <tr><td align="right">Database: </td><td>MySQL</td><td align="right">Group: </td><td><a href="#" target="_blank">87654321</a> (click to join)</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

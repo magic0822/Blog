@@ -1,0 +1,60 @@
+{include file="../Public/header.html"}
+<div class="admin">
+  <div class="tab">
+    <div class="tab-head"> <strong>Admin management</strong>
+      <ul class="tab-nav">
+        <li class="active"><a href="#tab-set">Admin info.</a></li>
+      </ul>
+    </div>
+    <div class="tab-body"> <br />
+      <div class="tab-panel active" id="tab-set">
+        <form method="post" class="form-x" action="index.php?p=Back&c=Master&a=edit" >
+          <div class="form-group">
+            <div class="label">
+              <label for="sitename">Nick Name</label>
+            </div>
+            <div class="field">
+              <input type="text" class="input" id="nickname" name="nickname" size="50" placeholder="Admin nick name" data-validate="required:Please input nick name for admin" value="{$masterInfo.nickname}"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="label">
+              <label for="siteurl">Job</label>
+            </div>
+            <div class="field">
+              <input type="text" class="input" id="job" name="job" size="50" placeholder="Please input your job" data-validate="required:Please input your job" value="{$masterInfo.job}" />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="label">
+              <label for="siteurl">Home</label>
+            </div>
+            <div class="field">
+              <input type="text" class="input" id="address" name="address" size="50" placeholder="Please input your location" data-validate="required:Please input your location" value="{$masterInfo.home}" />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="label">
+              <label for="siteurl">Tel</label>
+            </div>
+            <div class="field">
+              <input type="text" class="input" id="tel" name="tel" size="50" placeholder="Please input your phone number" data-validate="required:Please input your phone number" value="{$masterInfo.tel}" />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="label">
+              <label for="siteurl">Email</label>
+            </div>
+            <div class="field">
+              <input type="text" class="input" id="email" name="email" size="50" placeholder="Please input your email address" data-validate="required:Please input your email address" value="{$masterInfo.email}" />
+            </div>
+          </div>
+          <div class="form-button">
+            <button name="submit" class="button bg-main" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+    <div style='height:40px; border-bottom:1px #DDD solid'></div>
+</div>

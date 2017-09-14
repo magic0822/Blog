@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <title>Blog management system</title>
+    <link rel="stylesheet" href="{$smarty.const.CSS_DIR}/pintuer.css">
+    <link rel="stylesheet" href="{$smarty.const.CSS_DIR}/admin.css">
+    <script src="{$smarty.const.JS_DIR}/jquery.js"></script>
+    <script src="{$smarty.const.JS_DIR}/pintuer.js"></script>
+    <script src="{$smarty.const.JS_DIR}/respond.js"></script>
+    <script src="{$smarty.const.JS_DIR}/admin.js"></script>
+    <link type="image/x-icon" href="{$smarty.const.IMAGES_DIR}/favicon2.ico" rel="shortcut icon" />
+    <link rel="icon" href="{$smarty.const.IMAGES_DIR}/favicon2.ico" type="image/x-icon" />
+
+</head>
+
+<body>
+<div class="lefter">
+    <div class="logo"><a href="#" target="_blank"><img src="{$smarty.const.IMAGES_DIR}/logo.png" alt="blog management system" /></a></div>
+</div>
+<div class="righter nav-navicon" id="admin-nav">
+    <div class="mainer">
+        <div class="admin-navbar">
+            <span class="float-right">
+            	<a class="button button-little bg-main" href="http://www.blog.com/index.php?p=Home&c=Index&a=index" target="_blank">Home Page</a>
+                <a class="button button-little bg-yellow" href="index.php?p=Back&c=Admin&a=logout">logout</a>
+            </span>
+            <ul class="nav nav-inline admin-nav">
+                <li class="active"><a href="index.php?p=Back&c=Manage&a=index" class="icon-home"> Start</a>
+                    <ul><li><a href="index.php?p=Back&c=Category&a=index">Category management</a></li><li><a href="index.php?p=Back&c=Article&a=index">Articl management</a></li><li><a href="#">Comment management</a></li><li class="active"><a href="index.php?p=Back&c=SinglePage&a=index">Page management</a></li><li><a href="index.php?p=Back&c=Master&a=index">Admin management</a></li><li><a href="#">links</a></li></ul>
+                </li>
+                <li><a href="index.php?p=Back&c=Category&a=index" class="icon-cog"> 分类</a>
+                    <ul><li><a href="#">Global setting</a></li><li class="active"><a href="#">System setting</a></li><li><a href="#">Member setting</a></li><li><a href="#">Reward setting</a></li></ul>
+                </li>
+                <li><a href="http://www.blog.com/index.php?p=Back&c=Article&a=index" class="icon-file-text">Article management</a>
+                    <ul><li><a href="#">Add content</a></li><li class="active"><a href="#">Content management</a></li><li><a href="#">Category management</a></li><li><a href="#">Link management</a></li></ul>
+                </li>
+            </ul>
+        </div>
+        <div class="admin-bread">
+            <span>Hello，{$smarty.session.adminInfo.admin_name}，welcome!</span>
+            <ul class="bread">
+                <li><a href="index.html" class="icon-home"> Start</a></li>
+                <li>CMS</li>
+            </ul>
+        </div>
+    </div>
+</div>

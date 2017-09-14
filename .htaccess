@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+Options +FollowSymlinks
+RewriteEngine On
+
+RewriteRule ^index.html/(.*)/(.*)/(.*)   index.php?m=$1&c=$2&a=$3 [L,QSA,NC]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php/$1 [NC,QSA,L]
+
+RewriteCond %{HTTP_REFERER} !blog.com
+RewriteRule .*\.(jpg|jpeg|png|gif) Public/thief.jpg [NC,L]
+
+</IfModule>

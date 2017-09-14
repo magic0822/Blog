@@ -1,0 +1,20 @@
+<header>
+    <h1>Sparrow</h1>
+    <h2>A place you can bullshit as you want</h2>
+    <div class="logo"><a href="index.php?p=Home&c=Index&a=index"></a></div>
+    <nav id="topnav"><a href="index.php?p=Home&c=Index&a=index">Home</a>
+        {foreach from=$firstCate item='row'}
+        <a href="index.php?p=Home&c=Article&a=index&cate_id={$row.cate_id}">{$row.cate_name}</a>
+        {/foreach}
+    <a href="index.php?p=Home&c=SinglePage&a=index&page_id=2">About Me</a>
+        {if $smarty.session.userInfo.user_id|default:0 > 0}
+        <a style="font-size: 12px;margin-left: 100px;padding: 0">
+            Hi,{$smarty.session.userInfo.user_name}&nbsp;
+        </a><a href="index.php?p=Home&c=User&a=logout" style="font-size: 12px;margin-right: 100px;padding: 0">Logout</a>
+
+        {else}
+        <a href="index.php?p=Home&c=User&a=login" style="font-size:12px;margin-left: 100px;padding: 0;">Login&nbsp;</a><a
+                href="index.php?p=Home&c=User&a=register"  style="font-size:12px;margin-right: 100px;padding: 0;">&nbsp;SignUp</a>
+        {/if}
+    </nav>
+</header>

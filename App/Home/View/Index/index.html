@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sparrow's Space</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="{$smarty.const.CSS_DIR}base.css" rel="stylesheet">
+<link href="{$smarty.const.CSS_DIR}index.css" rel="stylesheet">
+<link href="{$smarty.const.CSS_DIR}media.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+  <link type="image/x-icon" href="{$smarty.const.IMAGES_DIR}favicon2.ico" rel="shortcut icon" />
+  <link rel="icon" href="{$smarty.const.IMAGES_DIR}favicon2.ico" type="image/x-icon" />
+<!--[if lt IE 9]>
+<script src="{$smarty.const.JS_DIR}modernizr.js"></script>
+<![endif]-->
+</head>
+</head>
+<body>
+<div class="ibody">
+{include file="../Public/header.html"}
+  <article>
+    <div class="banner">
+      <ul class="texts">
+        <p>The best life is use of willing attitude, a happy-go-lucky life. </p>
+        <p>Best lift is get something you really love and enjoy.</p>
+      </ul>
+    </div>
+    <div class="bloglist">
+      <h2>
+        <p><span>Recommends</span</p>
+      </h2>
+      {foreach from=$recommendArt item='row'}
+      <div class="blogs">
+        <h3><a href="index.php?p=Home&c=Article&a=show&art_id={$row.art_id}">{$row.title}</a></h3>
+        <figure><img src="/Uploads/thumb/{$row.thumb|truncate:8:NULL}/{$row.thumb}" ></figure>
+        <ul>
+          <p>{$row.content|strip_tags|truncate:200:"..."}</p>
+          <a href="index.php?p=Home&c=Article&a=show&art_id={$row.art_id}" target="_blank" class="readmore">read more&gt;&gt;</a>
+        </ul>
+        <p class="autor"><span>Author：{$row.author}</span><span>Category：【<a href="/">{$row.cate_name}</a>】</span><span>read（<a href="/">{$row.hits}</a>）</span><span>commend（<a href="/">30</a>）</span></p>
+        <div class="dateview">{$row.addtime|date_format:'%Y-%m-%d'}</div>
+      </div>
+      {/foreach}
+
+  </article>
+  <aside>
+    <div class="avatar"><a href="about.html"><span>About Sparrow</span></a></div>
+    <div class="topspaceinfo">
+      <h1>Murmur</h1>
+      <p>What the hell is this</p>
+    </div>
+    <div class="about_c">
+      <p>NickName：{$masterInfo.nickname}</p>
+      <p>Title：{$masterInfo.job} </p>
+      <p>Location：{$masterInfo.home}</p>
+      <p>Tel：{$masterInfo.tel}</p>
+      <p>Email：{$masterInfo.email}</p>
+    </div>
+    {literal}
+<div class="share-buttons">
+    <!-- Email -->
+    <a id="share-buttons" href="mailto:?Subject=Hey check it out!;Body=I%20saw%20this%20and%20thought%20of%20you!%20 http://mgsparrow.com">
+      <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" sytle="cursor:pointer"/>
+    </a>
+    <!-- Facebook -->
+    <a id="share-buttons"  href="http://www.facebook.com/sharer.php?u=http://mgsparrow.com" target="_blank">
+      <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" sytle="cursor:pointer" />
+    </a>
+    <!-- Google+ -->
+    <a id="share-buttons"  href="https://plus.google.com/share?url=http://mgsparrow.com" target="_blank">
+      <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" sytle="cursor:pointer" />
+    </a>
+    <!-- LinkedIn -->
+    <a id="share-buttons"  href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://mgsparrow.com" target="_blank">
+      <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" sytle="cursor:pointer" />
+    </a>
+    <!-- Pinterest -->
+    <a id="share-buttons"  href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">
+      <img src="https://simplesharebuttons.com/images/somacro/pinterest.png" alt="Pinterest" sytle="cursor:pointer" />
+    </a>
+    <!-- Twitter -->
+    <a id="share-buttons"  href="https://twitter.com/share?url=http://mgsparrow.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
+      <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" sytle="cursor:pointer" />
+    </a>
+</div>
+    {/literal}
+    <div class="tj_news">
+      <h2>
+        <p class="tj_t1">Popular</p>
+      </h2>
+      <ul>
+        {foreach from=$newArt item='row'}
+        <li><a href="index.php?p=Home&c=Article&a=show&art_id={$row.art_id}">{$row.title}</a></li>
+        {/foreach}
+      </ul>
+      <h2>
+        <p class="tj_t2">Tops</p>
+      </h2>
+      <ul>
+        {foreach from=$rmdArtByHits item='row'}
+        <li><a href="index.php?p=Home&c=Article&a=show&art_id={$row.art_id}">{$row.title}</a></li>
+        {/foreach}
+      </ul>
+    </div>
+    <div class="links">
+      <h2>
+        <p>other links</p>
+      </h2>
+      <ul>
+        <li><a href="/">Sparrow's Space</a></li>
+        <li><a href="#">nothing</a></li>
+      </ul>
+    </div>
+    <div class="copyright">
+      <ul>
+        <p> Design by <a href="/">Sparrow</a></p>
+      </ul>
+    </div>
+  </aside>
+  <script src="{$smarty.const.JS_DIR}silder.js"></script>
+  <div class="clear"></div>
+  <!-- 清除浮动 --> 
+</div>
+</body>
+</html>

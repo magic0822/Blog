@@ -1,0 +1,57 @@
+<aside>
+    <div class="rnav">
+        {foreach from=$subCate item='row' name='n1'}
+        <li class="rnav1{$smarty.foreach.n1.index % 4 + 1} "><a href="index.php?p=Home&c=Article&a=index&cate_id={$row.cate_id}">{$row.cate_name}</a></li>
+        {/foreach}
+    </div>
+    <div class="ph_news">
+        <h2>
+            <p>Tops</p>
+        </h2>
+        <ul class="ph_n">
+            {foreach from=$sortByHits item='row' name='n2'}
+            {if $smarty.foreach.n2.iteration <=3}
+            <li><span class="num{$smarty.foreach.n2.iteration}">{$smarty.foreach.n2.iteration}</span><a href="index.php?p=Home&c=Article&a=show&art_id={$row.art_id}">{$row.title}</a></li>
+            {else}
+            <li><span>{$smarty.foreach.n2.iteration}</span><a href="index.php?p=Home&c=Article&a=show&art_id={$row.art_id}">{$row.title}</a></li>
+            {/if}
+            {/foreach}
+        </ul>
+        <h2>
+            <p>Recommend</p>
+        </h2>
+        <ul>
+            {foreach from=$sortByRecommend item='row'}
+            <li><a href="index.php?p=Home&c=Article&a=show&art_id={$row.art_id}">{$row.title}</a></li>
+            {/foreach}
+        </ul>
+        <h2>
+            <p>最新评论</p>
+        </h2>
+        <ul class="pl_n">
+            {foreach from=$cmtInfos item='row'}
+            <dl>
+                <dt><img src="/Uploads/User/{$row.user_image}"> </dt>
+                <dt> </dt>
+                <dd>{$row.cmt_user}
+                    <time>{$row.cmt_time|date_format:'%Y-%m-%d %H:%M:%S'}</time>
+                </dd>
+                <dd><a href="/">{$row.cmt_content}</a></dd>
+            </dl>
+            {/foreach}
+        </ul>
+        <h2>
+            <p>Latest visitor</p>
+            <ul>
+                <img src="images/vis.jpg">
+            </ul>
+        </h2>
+    </div>
+    <div class="copyright">
+        <ul>
+            <p> Design by <a href="/">Sparrow</a></p>
+            <p>Balabala</p>
+            </p>
+        </ul>
+    </div>
+</aside>

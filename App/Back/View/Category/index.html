@@ -1,0 +1,50 @@
+{include file='../Public/header.html'}
+{literal}
+<script>
+    //define page onload event
+    $(function(){
+        //get btnadd button
+        $('#btnAdd').bind('click',function(){
+            // set category link
+            window.location.href = 'index.php?p=Back&c=Category&a=add';
+        });
+    });
+</script>
+{/literal}
+<div class="admin">
+    <form method="post" action='index.php?p=Back&c=Category&a=delAll'>
+        <div class="panel admin-panel">
+            <div class="panel-head"><strong>Category list</strong></div>
+            <div class="padding border-bottom">
+                <input type="button" class="button button-small checkall" name="checkall" checkfor="cate_id[]" value="selete all" />
+                <input type="button" id="btnAdd" class="button button-small border-green" value="Add category" />
+                <input type="submit" class="button button-small border-yellow" value="multi-del" />
+                <input type="button" class="button button-small border-blue" value="recycle" />
+            </div>
+            <table class="table table-hover">
+                <tr>
+                    <th width="45">Select</th>
+                    <th width="120">Category</th>
+                    <th width="240">Category name</th>
+                    <th width="*">Category description</th>
+                    <th width="100">Edit</th>
+                </tr>
+                {foreach from=$cateInfo item='row'}
+                <tr>
+                    <td><input type="checkbox" name="cate_id[]" value="{$row.cate_id}" /></td>
+                    <td>{$row.cate_pid}</td>
+                    <td>
+                        {$row.cate_name|indent:($row.level*5):'-'}
+                    </td>
+                    <td>{$row.cate_desc|truncate:25}</td>
+                    <td>
+                        <a class="button border-blue button-little" href="index.php?p=Back&c=Category&a=edit&cate_id={$row.cate_id}">Edit</a>
+                        <a class="button border-yellow button-little" href="index.php?p=Back&c=Category&a=del&cate_id={$row.cate_id}" onclick=" return confirm('Are you sure delete this category？');">Delete</a>
+                    </td>
+                </tr>
+                {/foreach}
+            </table>
+        </div>
+    </form>
+    <br />
+</div>
